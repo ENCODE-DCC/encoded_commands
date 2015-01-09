@@ -1,7 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 setup(
     name='encoded_commands',
-    version='0.1',
+    version='0.2',
     description='',
     packages=['encoded_commands'],
     include_package_data=True,
@@ -12,4 +12,3 @@ setup(
         update-file-status = encoded_commands.update_file_status:main
         ''',
 )
-
