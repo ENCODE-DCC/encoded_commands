@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
     name='encoded_commands',
-    version='0.2',
+    version='0.3',
     description='',
     packages=['encoded_commands'],
     include_package_data=True,
