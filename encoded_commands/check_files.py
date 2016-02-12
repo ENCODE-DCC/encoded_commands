@@ -42,6 +42,7 @@ GZIP_TYPES = [
     "fastq",
     "gff",
     "gtf",
+    "tagAlign",
     "tar",
     "sam",
     "wig"
@@ -153,12 +154,19 @@ def check_format(item, path):
         ('bigBed', 'candidate enhancer predictions'): ['-type=bigBed3+', chromInfo, '-as=%s/as/candidate_enhancer_prediction.as' % encValData],
         ('bed', 'enhancer predictions'): ['-type=bed3+', chromInfo, '-as=%s/as/enhancer_prediction.as' % encValData],
         ('bigBed', 'enhancer predictions'): ['-type=bigBed3+', chromInfo, '-as=%s/as/enhancer_prediction.as' % encValData],
+        ('bed', 'idr_peak'): ['-type=bed6+', chromInfo, '-as=%s/as/idr_peak.as' % encValData],
+        ('bigBed', 'idr_peak'): ['-type=bigBed6+', chromInfo, '-as=%s/as/idr_peak.as' % encValData],
+        ('bed', 'tss_peak'): ['-type=bed6+', chromInfo, '-as=%s/as/tss_peak.as' % encValData],
+        ('bigBed', 'tss_peak'): ['-type=bigBed6+', chromInfo, '-as=%s/as/tss_peak.as' % encValData],
+
+
         ('bedpe', None): ['-type=bed3+', chromInfo],
         ('bedpe', 'mango'): ['-type=bed3+', chromInfo],
         #non-bed types
         ('rcc', None): ['-type=rcc'],
         ('idat', None): ['-type=idat'],
         ('gtf', None): None,
+        ('tagAlign', None): ['-type=tagAlign'],
         ('tar', None): None,
         ('tsv', None): None,
         ('csv', None): None,
@@ -169,7 +177,8 @@ def check_format(item, path):
         ('sam', None): None,
         ('wig', None): None,
         ('hdf5', None): None,
-        ('gff', None): None
+        ('gff', None): None,
+        ('vcf', None): None
     }
 
     validate_args = validate_map.get((item['file_format'], item.get('file_format_type')))
